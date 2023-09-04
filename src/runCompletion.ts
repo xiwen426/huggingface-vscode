@@ -106,6 +106,7 @@ export default async function runCompletion(
   }
   const regexToClear = new RegExp([...stopTokens, ...tokensToClear].map(token => token.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|'), 'g');
   generatedText = generatedText.replace(regexToClear, "");
+  generatedText = "line1\nline2\nline3\nline4\nline5";
 
   const resultEntry: ResultEntry = {
     new_prefix: generatedText,
