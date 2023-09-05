@@ -1,6 +1,6 @@
 {
   "publisher": "keysight-technologies",
-  "name": "huggingface-vscode",
+  "name": "keysight-copilot",
   "version": "0.0.1",
   "displayName": "Keysight Technologies",
   "description": "AI Autocomplete for code-gen models @ Keysight Technologies",
@@ -81,7 +81,7 @@
     "jupyter"
   ],
   "activationEvents": [
-    "*"
+    "onStartupFinished"
   ],
   "main": "./out/extension",
   "scripts": {
