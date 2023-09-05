@@ -109,10 +109,10 @@ export default async function runCompletion(
   // generatedText = generatedText.replace(regexToClear, "");
   let generatedText = "";
   if (prefix && suffix) {
-    generatedText = "line1\nline2\nline3\nline4\nlinesufix&prefix123";
+    generatedText = "line1\nline2\nline3\nline4\nlinesufix&prefix12";
   }
   else {
-    generatedText = "line1\nline2\nline3\nline4\nlinenopresurfix123";
+    generatedText = "line1\nline2\nline3\nline4\nlinenopresurfix12";
   }
 
   const resultEntry: ResultEntry = {

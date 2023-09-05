@@ -2,7 +2,7 @@
   "publisher": "keysight-technologies",
   "name": "keysight-copilot",
   "version": "0.0.1",
-  "displayName": "Keysight Technologies",
+  "displayName": "Keysight Copilot",
   "description": "AI Autocomplete for code-gen models @ Keysight Technologies",
   "icon": "small_logo.png",
   "author": "Mishig Davaadorj <mishig@hf.co> (https://hf.co/)",
@@ -176,20 +176,20 @@
     "commands": [
       {
         "command": "HuggingFaceCode::setApiToken",
-        "title": "Hugging Face Code: Set API token"
+        "title": "Keysight Copilot: Set API token"
       },
       {
         "command": "tabnine.attribution",
-        "title": "Hugging Face Code: Show Code Attribution"
+        "title": "Keysight Copilot: Show Code Attribution"
       },
       {
         "command": "HuggingFaceCode::openGithub",
-        "title": "Hugging Face Code: Open project GitHub"
+        "title": "Keysight Copilot: Open project GitHub"
       }
     ],
     "configuration": [
       {
-        "title": "Hugging Face Code",
+        "title": "Keysight Copilot",
         "properties": {
           "HuggingFaceCode.configTemplate": {
             "type": "string",
