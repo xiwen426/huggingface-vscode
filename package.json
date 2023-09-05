@@ -193,7 +193,13 @@
         "properties": {
           "HuggingFaceCode.configTemplate": {
             "type": "string",
-            "enum": ["bigcode/starcoder", "codellama/CodeLlama-13b-hf", "Phind/Phind-CodeLlama-34B-v2", "WizardLM/WizardCoder-Python-34B-V1.0", "Custom"],
+            "enum": [
+              "bigcode/starcoder",
+              "codellama/CodeLlama-13b-hf",
+              "Phind/Phind-CodeLlama-34B-v2",
+              "WizardLM/WizardCoder-Python-34B-V1.0",
+              "Custom"
+            ],
             "default": "bigcode/starcoder",
             "description": "Choose an option from the dropdown."
           },
@@ -215,7 +221,7 @@
           "HuggingFaceCode.fillModeTemplate": {
             "type": "string",
             "default": "<fim_prefix>[prefix]<fim_suffix>[suffix]<fim_middle>",
-            "description":  "Token `[prefix]` is replaced by contents of a text file from the beginning to the cursor. Token `[suffix]` is replaced by contents of a text file from the cursor to the end. So you can provide your own format template for ex: `<start>[prefix]<fill>[suffix]<middle>`"
+            "description": "Token `[prefix]` is replaced by contents of a text file from the beginning to the cursor. Token `[suffix]` is replaced by contents of a text file from the cursor to the end. So you can provide your own format template for ex: `<start>[prefix]<fill>[suffix]<middle>`"
           },
           "HuggingFaceCode.temperature": {
             "type": "float",
@@ -232,7 +238,9 @@
             "items": {
               "type": "string"
             },
-            "default": ["<|endoftext|>"],
+            "default": [
+              "<|endoftext|>"
+            ],
             "description": "(Optional) Stop tokens"
           },
           "HuggingFaceCode.tokensToClear": {
@@ -240,7 +248,9 @@
             "items": {
               "type": "string"
             },
-            "default": ["<fim_middle>"],
+            "default": [
+              "<fim_middle>"
+            ],
             "description": "(Optional) Tokens that should be cleared from the resulting output. For example, in FIM mode, one usually wants to clear FIM token from resulting outout."
           },
           "HuggingFaceCode.attributionWindowSize": {
