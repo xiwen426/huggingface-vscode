@@ -86,7 +86,7 @@
   "main": "./out/extension",
   "scripts": {
     "analyze:bundle": "webpack --env analyzeBundle",
-    "vscode:prepublish": "yarn --frozen-lockfile && yarn clear-out && webpack --mode production",
+    "vscode:prepublish": "webpack --mode production",
     "compile": "webpack --mode development --watch",
     "build": "webpack --mode development",
     "test:copyassets": "ncp ./src/test/fixture ./out/test/fixture/",
@@ -122,7 +122,7 @@
     "@types/vscode": "^1.50.0",
     "@types/yauzl": "^2.9.1",
     "@typescript-eslint/eslint-plugin": "^5.45.0",
-    "@typescript-eslint/parser": "^4.18.0",
+    "@typescript-eslint/parser": "^5.0.0",
     "assert": "^2.0.0",
     "chai": "^4.2.0",
     "chai-shallow-deep-equal": "^1.4.6",
