@@ -1,9 +1,9 @@
 {
-  "publisher": "HuggingFace",
+  "publisher": "keysight-technologies",
   "name": "huggingface-vscode",
-  "version": "0.0.38",
-  "displayName": "HF Code Autocomplete",
-  "description": "AI Autocomplete for OSS code-gen models",
+  "version": "0.0.1",
+  "displayName": "Keysight Technologies",
+  "description": "AI Autocomplete for code-gen models @ Keysight Technologies",
   "icon": "small_logo.png",
   "author": "Mishig Davaadorj <mishig@hf.co> (https://hf.co/)",
   "license": "License at https://github.com/huggingface/huggingface-vscode",
