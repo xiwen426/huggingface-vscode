@@ -1,0 +1,28 @@
+syntax = "proto3";
+package pb;
+import "google/protobuf/empty.proto";
+
+message InsertInferenceRequest {}
+
+message InsertInferenceResponse {
+  uint64 inference_id = 1;
+}
+
+service InsertInference {
+  rpc InsertInference(InsertInferenceRequest) returns (InsertInferenceResponse);
+}
+
+message UpdateInferenceStateRequest {
+  uint64 inference_id = 1;
+  InferenceState state = 2; // 0: generated, 1: shown, 2: accepted
+}
+
+service UpdateInferenceState {
+  rpc UpdateInference(UpdateInferenceStateRequest) returns (google.protobuf.Empty);
+}
+
+enum InferenceState {
+  GENERATED = 0;
+  SHOWN = 1;
+  ACCEPTED = 2;
+}

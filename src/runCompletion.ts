@@ -10,6 +10,7 @@ import languages from "./globals/languages";
 import { setDefaultStatus, setLoadingStatus } from "./statusBar/statusBar";
 // import { logInput, logOutput } from "./outputChannels";
 // import { getTabnineExtensionContext } from "./globals/tabnineExtensionContext";
+import {modelInferAsync} from './grpcConnection';
 
 export type CompletionType = "normal" | "snippet";
 
@@ -30,6 +31,14 @@ export default async function runCompletion(
   const afterEnd = document.positionAt(afterEndOffset);
   const prefix =  document.getText(new Range(beforeStart, position)) + currentSuggestionText;
   const suffix = document.getText(new Range(position, afterEnd));
+
+  let generatedText = "";
+  try{
+      generatedText = await modelInferAsync(prefix, suffix, 1);
+      console.log("Generated text:", generatedText);
+  }catch (error) {
+      console.error("An error occurred:", error);
+  }
 
   // const config = workspace.getConfiguration("HuggingFaceCode") as WorkspaceConfiguration & HFCodeConfig;
   // const { modelIdOrEndpoint, isFillMode, autoregressiveModeTemplate, fillModeTemplate, stopTokens, tokensToClear, temperature, maxNewTokens } = config;
@@ -107,13 +116,13 @@ export default async function runCompletion(
   // }
   // const regexToClear = new RegExp([...stopTokens, ...tokensToClear].map(token => token.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|'), 'g');
   // generatedText = generatedText.replace(regexToClear, "");
-  let generatedText = "";
-  if (prefix && suffix) {
-    generatedText = "line1\nline2\nline3\nline4\nlinesufix&prefix12";
-  }
-  else {
-    generatedText = "line1\nline2\nline3\nline4\nlinenopresurfix12";
-  }
+  // let generatedText = "";
+  // if (prefix && suffix) {
+  //   generatedText = "line1\nline2\nline3\nline4\nlinesufix&prefix12";
+  // }
+  // else {
+  //   generatedText = "line1\nline2\nline3\nline4\nlinenopresurfix12";
+  // }
 
   const resultEntry: ResultEntry = {
     new_prefix: generatedText,

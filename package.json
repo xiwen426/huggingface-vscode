@@ -154,11 +154,13 @@
     "webpack-cli": "^5.0.0"
   },
   "dependencies": {
+    "@grpc/grpc-js": "^1.9.1",
     "axios": "^0.21.0",
     "debounce": "^1.2.1",
     "diff": "^5.0.0",
     "eslint-plugin-no-only-tests": "^3.1.0",
     "extract-zip": "^2.0.1",
+    "google-protobuf": "^3.21.2",
     "https-proxy-agent": "^5.0.0",
     "node-fetch": "^3.3.0",
     "semver": "^7.3.2",

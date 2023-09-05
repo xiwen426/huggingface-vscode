@@ -1,0 +1,17 @@
+syntax = "proto3";
+package pb;
+
+message ModelInferRequest {
+  string prefix = 1;
+  string suffix = 2; // If not empty, perform code infilling
+  uint32 num_responses = 3; // Number of responses to generate, default = 1
+  string email = 4;
+  string auth_token = 5;
+ }
+message ModelInferResponse {
+  uint64 inference_id = 1;
+  repeated string response = 2;
+}
+service ModelInfer {
+  rpc GetCode(ModelInferRequest) returns (stream ModelInferResponse);
+}
